@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Item;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($brandid)
     {
-        return view('item.details');
+        $item = Item::all()->where('brand_id',$brandid);
+
+        $brand = Brand::find($brandid);
+
+        return view('brand.details')->with('items',$item)->with('brandname',$brand->brand_name);
     }
 
     /**
@@ -41,10 +46,10 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show(Brand $brand)
     {
         //
     }
@@ -52,10 +57,10 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Brand $brand)
     {
         //
     }
@@ -64,10 +69,10 @@ class ItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, Brand $brand)
     {
         //
     }
@@ -75,10 +80,10 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Brand $brand)
     {
         //
     }

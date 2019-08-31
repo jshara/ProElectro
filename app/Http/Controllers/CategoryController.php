@@ -2,19 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Item;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($catid)
     {
-        return view('item.details');
+        $item = Item::all()->where('cat_id',$catid);
+        $cat = Category::find($catid);
+
+        return view('category.details')->with('items',$item)->with('catname',$cat->cat_name);
     }
 
     /**
@@ -41,10 +45,10 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show(Category $category)
     {
         //
     }
@@ -52,10 +56,10 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Category $category)
     {
         //
     }
@@ -64,10 +68,10 @@ class ItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, Category $category)
     {
         //
     }
@@ -75,10 +79,10 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Category $category)
     {
         //
     }

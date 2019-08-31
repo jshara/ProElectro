@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Item;
+use App\Store;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class StoreController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($storeid)
     {
-        return view('item.details');
+        $store = Store::find($storeid);
+
+        return view('store.details')->with('store',$store);
     }
 
     /**
@@ -41,10 +43,10 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show(Store $store)
     {
         //
     }
@@ -52,10 +54,10 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Store $store)
     {
         //
     }
@@ -64,10 +66,10 @@ class ItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
+     * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, Store $store)
     {
         //
     }
@@ -75,10 +77,10 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Store $store)
     {
         //
     }

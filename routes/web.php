@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/jsoeph', function () {
-    return view('home');
-});
+
+// Route::get('/brand/{catid}', 'BrandController@index');
+Route::get('/brand/{brandid}', 'BrandController@index');
+
+Route::get('/cat/{catid}', 'CategoryController@index');
+Route::get('/store/{storeid}', 'StoreController@index');
+
+Route::get('/item', 'ItemController@index');
+Route::get('/cart', 'CartController@index');
+
+// Route::get('/Item/{itemid}', 'ItemController@index');
+// Route::get('/cart/{cartid}', 'CartController@index');
+

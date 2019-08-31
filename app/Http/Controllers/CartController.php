@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Item;
+use App\Cart;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('item.details');
+        return view('cart.details');
     }
 
     /**
@@ -41,10 +41,10 @@ class ItemController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show(Cart $cart)
     {
         //
     }
@@ -52,10 +52,10 @@ class ItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Cart $cart)
     {
         //
     }
@@ -64,10 +64,10 @@ class ItemController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(Request $request, Cart $cart)
     {
         //
     }
@@ -75,10 +75,10 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Item  $item
+     * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy(Cart $cart)
     {
         //
     }

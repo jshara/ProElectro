@@ -33,46 +33,58 @@
     <div id="app"> 
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-dark">
             <div class="container">
-                <a class="navbar-brand" style="color:#07DA0F;">ProElectro</a>
+                <a class="navbar-brand" href= "/" style="color:#07DA0F;">ProElectro</a>
                 <button class="navbar-toggler" style="background-color:white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon text-white"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link rounded-circle text-white" 
-                            Style="text-shadow:0px 0px 8px #07DA0F;"> <strong>Your Electronic Stop</strong>  </a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Brands </a>
+                                Brands </a>                                
                             <div class="dropdown-menu" aria-labelledby="category">
-                                <a class="dropdown-item" href="#">Samsang</a>
-                                <a class="dropdown-item" href="#">Philhps</a>
-                                <a class="dropdown-item" href="#">Sony</a>
-                                <a class="dropdown-item" href="#">Toshiba</a>
+                                <?php $brands = DB::table('brands')->select('brand_id','brand_name')->get(); ?>
+                                @foreach($brands as $brand)
+                                    <a class="dropdown-item" href="/brand/{{$brand->brand_id}}"><?php echo $brand->brand_name ?></a>
+                                @endforeach                                
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Items </a>
                             <div class="dropdown-menu" aria-labelledby="category">
-                                <a class="dropdown-item" href="#">TV</a>
-                                <a class="dropdown-item" href="#">Smart Watch</a>
-                                <a class="dropdown-item" href="#">Phones</a>
-                                <a class="dropdown-item" href="#">Camera</a>
+                                <?php $cats = DB::table('categories')->select('cat_id','cat_name')->get(); ?>
+                                @foreach($cats as $cat)
+                                    <a class="dropdown-item" href="/cat/{{$cat->cat_id}}"><?php echo $cat->cat_name ?></a>
+                                @endforeach
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Stores </a>
                             <div class="dropdown-menu" aria-labelledby="category">
-                                <a class="dropdown-item" href="#">Suva</a>
-                                <a class="dropdown-item" href="#">Nakasi</a>
+                                <?php $stores = DB::table('stores')->select('store_id','store_name')->get(); ?>
+                                @foreach($stores as $store)
+                                    <a class="dropdown-item" href="/store/{{$store->store_id}}"><?php echo $store->store_name ?></a>
+                                @endforeach
                             </div>
                         </li>                     
                     </ul>
+                    
+                    <div class="navbar-nav ml-auto">
+                        <div class="form-inline">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <a href="/item" class="btn btn-success">Search</a>
+                        </div>
+
+                        <a href="/cart" class="btn btn-warning"> Cart </a>
+                    
+                        <div class="nav-item">
+                            <a href="" class="nav-link rounded-circle text-white" 
+                            Style="text-shadow:0px 0px 8px #07DA0F;"> <strong>Your Electronic Stop</strong>  </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>        
