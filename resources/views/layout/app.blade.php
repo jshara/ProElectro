@@ -42,7 +42,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Brands </a>                                
+                                Brand </a>                                
                             <div class="dropdown-menu" aria-labelledby="category">
                                 <?php $brands = DB::table('brands')->select('brand_id','brand_name')->get(); ?>
                                 @foreach($brands as $brand)
@@ -52,7 +52,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Items </a>
+                                Category </a>
                             <div class="dropdown-menu" aria-labelledby="category">
                                 <?php $cats = DB::table('categories')->select('cat_id','cat_name')->get(); ?>
                                 @foreach($cats as $cat)
@@ -62,7 +62,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Stores </a>
+                                Store </a>
                             <div class="dropdown-menu" aria-labelledby="category">
                                 <?php $stores = DB::table('stores')->select('store_id','store_name')->get(); ?>
                                 @foreach($stores as $store)
