@@ -11,24 +11,24 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/public/caurosal/headphones.jpg" class="d-block w-100" alt="HeadPhone">
+        <img src="caurosal/headphones.jpg" class="d-block w-100px; h-25px" style="width: 2000px; height:700px"; alt="HeadPhone">
         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5>Headphones</h5>
+          <p></p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/public/caurosal/imac.png" class="d-block w-100" alt="IMAC">
+        <img src="caurosal/imac.png" class="d-block w-100px; h-25px" style="width: 2000px; height:700px"; alt="IMAC">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5>Apple Products</h5>
+          <p></p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/public/caurosal/smart-watch.jpg" class="d-block w-100" alt="SmartWatch">
+        <img src="caurosal/smart-watch.jpg" class="d-block w-100px; h-25px" style="width: 2000px; height:700px"; alt="SmartWatch">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h5>Smart Watch</h5>
+          <p></p>
         </div>
       </div>
     </div>
