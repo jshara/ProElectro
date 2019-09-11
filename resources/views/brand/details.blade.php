@@ -7,7 +7,7 @@
     </div>
     <div class="row">
         <table id="table" class ="table table-striped table-sm table-hover">
-            <thead class="thead-dark">
+            <thead class="">
                 <tr>
                     <th> ID</th>
                     <th> Name</th>

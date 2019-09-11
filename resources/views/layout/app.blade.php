@@ -73,10 +73,13 @@
                     </ul>
                     
                     <div class="navbar-nav ml-auto">
-                        <div class="form-inline">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <a href="/item" class="btn btn-success">Search</a>
-                        </div>
+                        <form action="/item" method="POST" role="search">
+                            {{ csrf_field() }}
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="search" placeholder="Search">
+                                <button type="submit" class="btn btn-success">Search</button>
+                            </div>
+                        </form>
 
                         <a href="/cart" class="btn btn-warning"> Cart </a>
                     
