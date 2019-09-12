@@ -17,6 +17,8 @@ class CreateItemsTable extends Migration
             $table->bigIncrements('item_id');
             $table->string('item_name');
             $table->string('item_desc');
+            $table->string('item_details');
+            $table->decimal('item_price',6,2);
             $table->string('item_pic');
             $table->unsignedBigInteger('brand_id');
             $table->unsignedBigInteger('cat_id');
