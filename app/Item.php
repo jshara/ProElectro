@@ -16,4 +16,8 @@ class Item extends Model
     public function category(){
         return $this->belongsTo('App\Category');
     }
+
+    public function order(){
+        return $this->belongsTo('App\Order');
+    }
 }
