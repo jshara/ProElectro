@@ -1,5 +1,4 @@
 @extends('layout.app')
-
 @section('content')
 <div>
 <div class="bd-example">
@@ -11,21 +10,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="caurosal/headphones.jpg" class="d-block w-100px; h-25px" style="width: 100%; height:500px"; alt="HeadPhone">
+        <img src="caurosal/headphones.jpg" class="d-block w-100px; h-25px" style="width: 100%; height:520px"; alt="HeadPhone">
         <div class="carousel-caption d-none d-md-block">
           <h5>Headphones</h5>
           <p></p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="caurosal/imac.png" class="d-block w-100px; h-25px" style="width: 100%; height:500px"; alt="IMAC">
+        <img src="caurosal/imac.png" class="d-block w-100px; h-25px" style="width: 100%; height:520px"; alt="IMAC">
         <div class="carousel-caption d-none d-md-block">
           <h5><a href="#" class="text-dark"> Apple Products </a> </h5>
           <p></p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="caurosal/smart-watch.jpg" class="d-block w-100px; h-25px" style="width: 100%; height:500px"; alt="SmartWatch">
+        <img src="caurosal/smart-watch.jpg" class="d-block w-100px; h-25px" style="width: 100%; height:520px"; alt="SmartWatch">
         <div class="carousel-caption d-none d-md-block">
           <h5>Smart Watch</h5>
           <p></p>
