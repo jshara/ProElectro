@@ -30,8 +30,7 @@
                             </td>
                             <td>
                                 <button class="acart btn btn-success" data-id="{{$item->item_id}}" data-name="{{$item->item_name}}">Add Cart</button>
-                                <input name="_token" value="eRYFMqxeGXyGy7Kn1AU7af7qbGlt4uEp8RtYb4Vx" type="hidden">
-                                
+                                <input name="_token" value="eRYFMqxeGXyGy7Kn1AU7af7qbGlt4uEp8RtYb4Vx" type="hidden">                                
                             </td>
                         </tr>
                     @endforeach

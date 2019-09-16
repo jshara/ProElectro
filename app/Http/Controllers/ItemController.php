@@ -28,7 +28,7 @@ class ItemController extends Controller
         ->orwhere('categories.cat_name', 'LIKE', $search)
         ->get();
 
-        // dd($items);
+        //  dd($items);
         return view('item.details')->with('items',$items);           
     }
 

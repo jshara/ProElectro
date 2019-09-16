@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use DB;
+use App\Order;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -14,7 +16,18 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart.details');
+        // $order = Order::all();
+        // $order = DB::table('items')
+        // ->join('orders','items->item_id','=','orders->item_id')
+        // ->select('orders.order_quantity','items.item_name','items.item_price')
+        // ->where('orders.done','=','0')
+        // ->get();
+        
+        $sql = 'SELECT orders.order_id, orders.order_quantity, items.item_name, items.item_price FROM orders INNER JOIN items ON orders.item_id = items.item_id';
+        $order = DB::select($sql);
+        // dd($order);
+
+        return view('cart.details')->with('orders',$order);
     }
 
     /**
