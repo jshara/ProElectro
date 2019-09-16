@@ -11,6 +11,9 @@
                 <tr>
                     <th> ID</th>
                     <th> Name</th>
+                    <th> Details</th>
+                    <th> Brand</th>
+                    <th> Price</th>
                     <th> Logo</th>                            
                 </tr>
             </thead>
@@ -23,6 +26,15 @@
                             </td>                   
                             <td>
                                 <label>{{$item->item_name}}</label>
+                            </td>
+                            <td>
+                                <label>{{$item->item_details}}</label>
+                            </td> 
+                            <td>
+                                <label>{{$item->brand_name}}</label>
+                            </td>                    
+                            <td>
+                                <label>{{$item->item_price}}</label>
                             </td>
                             <td>	
                                 <img src="{{$item->item_pic}}" height="50px" width="50px"/>
