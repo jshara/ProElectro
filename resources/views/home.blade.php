@@ -20,7 +20,7 @@
       <div class="carousel-item">
         <img src="caurosal/imac.png" class="d-block w-100px; h-25px" style="width: 100%; height:500px"; alt="IMAC">
         <div class="carousel-caption d-none d-md-block">
-          <h5>Apple Products</h5>
+          <h5><a href="#" class="text-dark"> Apple Products </a> </h5>
           <p></p>
         </div>
       </div>
