@@ -10,6 +10,6 @@ class Order extends Model
     protected $table = 'orders';
 
     public function item(){
-        return $this->hasMany('App\Item', 'item_id');
+        return $this->hasMany('App\Item', 'order_id');
     }
 }
