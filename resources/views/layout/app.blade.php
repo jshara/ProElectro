@@ -28,6 +28,9 @@
     <script defer src="{{ asset('fontawesome/js/all.js') }}"></script>
     <!-- <script src="https://kit.fontawesome.com/087ae4bfd6.js"></script> -->
 
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
 </head>
 <body>
     <div id="app"> 
