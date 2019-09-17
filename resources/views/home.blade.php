@@ -42,47 +42,57 @@
   </div>
 </div>
 </div>
+
+</body>
+
+
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-3">
+<footer class="page-footer font-small unique-color-dark pt-4">
+
+
+ 
+
+
+<img src="https://img.icons8.com/color/48/000000/facebook-new.png">
+<img src="https://img.icons8.com/color/48/000000/linkedin-circled.png">
+<img src="https://img.icons8.com/color/48/000000/twitter-circled.png">
+
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
 
   <!-- Footer Elements -->
   <div class="container">
 
-    <!-- Grid row-->
-    <div class="row">
-
-      <!-- Grid column -->
-      <div class="col-md-12 py-5">
-        <div class="mb-5 flex-center">
-
-        
-
-          <!-- Facebook -->
-          <a class="fb-ic">
-          <a href="https://www.facebook.com" target="_blank"><img alt="facebook"  src="https://img.icons8.com/color/48/000000/facebook-new.png" class="center"> </a>
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-          <a href="https://twitter.com" target="_blank"> <img alt="twitter" src="https://img.icons8.com/color/48/000000/twitter-circled.png"> </a>         </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-          <a href="https://linkedin.com" target="_blank"> <img alt="linkedin" src="https://img.icons8.com/color/48/000000/linkedin-circled.png">
-          </a>
-          
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row-->
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+            <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+     
+    </ul>
+    <!-- Social buttons -->
 
   </div>
   <!-- Footer Elements -->
 
-  <!-- Copyright -->
+ <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2019 Copyright:
     <a href="www.proelctro.com"> ProElectro.com</a>
   </div>
   <!-- Copyright -->
+
 
 </footer>
 <!-- Footer -->

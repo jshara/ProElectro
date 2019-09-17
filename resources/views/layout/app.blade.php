@@ -100,4 +100,6 @@
     </script>    
     
 </body>
+<footer class="page-footer font-small unique-color-dark pt-4">
+</footer>
 </html>
