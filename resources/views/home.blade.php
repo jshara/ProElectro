@@ -47,18 +47,6 @@
 
 
 <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark pt-4">
-
-
- 
-
-
-<img src="https://img.icons8.com/color/48/000000/facebook-new.png">
-<img src="https://img.icons8.com/color/48/000000/linkedin-circled.png">
-<img src="https://img.icons8.com/color/48/000000/twitter-circled.png">
-
-
-<!-- Footer -->
 <footer class="page-footer font-small special-color-dark pt-4">
 
   <!-- Footer Elements -->
@@ -67,17 +55,17 @@
     <!-- Social buttons -->
     <ul class="list-unstyled list-inline text-center">
       <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
+        <a class="btn-floating btn-fb mx-1"> <a href="https://www.facebook.com" target="_blank"><img alt="facebook"  src="https://img.icons8.com/color/48/000000/facebook-new.png" class="center"> </a>
           <i class="fab fa-facebook-f"> </i>
         </a>
       </li>
       <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
+        <a class="btn-floating btn-tw mx-1"> <a href="https://twitter.com" target="_blank"> <img alt="twitter" src="https://img.icons8.com/color/48/000000/twitter-circled.png" > </a> 
           <i class="fab fa-twitter"> </i>
         </a>
       </li>
             <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
+        <a class="btn-floating btn-li mx-1"> <a href="https://linkedin.com" target="_blank"> <img alt="linkedin" src="https://img.icons8.com/color/48/000000/linkedin-circled.png"> 
           <i class="fab fa-linkedin-in"> </i>
         </a>
      
