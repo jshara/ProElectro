@@ -41,13 +41,49 @@
     </a>
   </div>
 </div>
-
-
-<p></p>
-<button class="btn btn-danger">
-click me
-</button>
 </div>
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
 
+  <!-- Footer Elements -->
+  <div class="container">
 
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+        
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+          <a href="https://www.facebook.com" target="_blank"><img alt="facebook"  src="https://img.icons8.com/color/48/000000/facebook-new.png" class="center"> </a>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+          <a href="https://twitter.com" target="_blank"> <img alt="twitter" src="https://img.icons8.com/color/48/000000/twitter-circled.png"> </a>         </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+          <a href="https://linkedin.com" target="_blank"> <img alt="linkedin" src="https://img.icons8.com/color/48/000000/linkedin-circled.png">
+          </a>
+          
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="www.proelctro.com"> ProElectro.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 @endsection
