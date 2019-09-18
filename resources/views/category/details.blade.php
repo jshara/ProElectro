@@ -3,44 +3,37 @@
 @section('content')
 <div class="container">
     <div>
-        <h3>{{$catname}}</h3>
+        <h3>{{$category}}</h3>
     </div>
-    <div class="row">
-        <table id="table" class ="table table-striped table-sm table-hover">
-            <thead class="thead-dark">
-                <tr>
-                    <th> ID</th>
-                    <th> Name</th>
-                    <th> Logo</th>  
-                    <th> Add Cart</th>                          
-                </tr>
-            </thead>
-            <body>
-                @if(count($items) > 0)
-                    @foreach($items as $item)
-                        <tr data-toggle="tooltip" title="click for details">
-                            <td>
-                                <label>{{$item->item_id}}</label>
-                            </td>                   
-                            <td>
-                                <label>{{$item->item_name}}</label>
-                            </td>
-                            <td>	
-                                <img src="{{$item->item_pic}}" height="50px" width="50px"/>
-                            </td>
-                            <td>
-                                <button class="acart btn btn-success" data-id="{{$item->item_id}}" data-name="{{$item->item_name}}">Add Cart</button>
-                                <input name="_token" value="eRYFMqxeGXyGy7Kn1AU7af7qbGlt4uEp8RtYb4Vx" type="hidden">                                
-                            </td>
-                        </tr>
-                    @endforeach
-                @endif
-            </body>
-        </table>
+    <div class="flex-container d-flex justify-content-around">
+        @if(count($items) > 0)
+            @foreach($items as $item)
+                <div>
+                <div id="view">                                     
+                    <label>{{$item->item_name}}</label><br>             
+                    <img src="{{$item->item_pic}}" style="border-radius:15px" height="150px" width="150px"/>          
+                    <label>{{$item->brand_name}}</label> <br> 
+                </div>  
+                    <label>${{$item->item_price}}</label>
+                    <?php $check = DB::table('orders')->where('item_id',$item->item_id)->where('done',0)->where('session_id',Session::getId())->count();?>
+                    <input name="_token" value="eRYFMqxeGXyGy7Kn1AU7af7qbGlt4uEp8RtYb4Vx" type="hidden">
+                    @if($check)
+                        <button class="acart btn btn-danger" data-id="{{$item->item_id}}" data-name="{{$item->item_name}}">Remove</button>                                    
+                    @else
+                        <button class="acart btn btn-success" data-id="{{$item->item_id}}" data-name="{{$item->item_name}}">Add Cart</button>
+                    @endif
+                </div>
+            @endforeach
+        @endif
     </div>
 </div>
 
+@include('layout.modal')
 <script>
+    $(document).on('click','#view', function(){
+        $('#myModal').modal('show');
+    });
+
     $(document).on('click', '.acart', function() {
         if($(this).text()=="Add Cart"){
             $.ajax({
@@ -48,8 +41,7 @@
                 url: '/order/add',
                 data: {
                     '_token': $('input[name=_token]').val(),
-                    'id': $(this).data('id'),
-                    'name': $(this).data('name')
+                    'id': $(this).data('id')
                 },
                 success: function(data) { }                 
             }); 
@@ -62,8 +54,7 @@
                 url: '/order/remove',
                 data: {
                     '_token': $('input[name=_token]').val(),
-                    'id': $(this).data('id'),
-                    'name': $(this).data('name')
+                    'id': $(this).data('id')
                 },
                 success: function(data) { }   
             });

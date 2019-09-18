@@ -12,7 +12,7 @@
         <table class="table table-condensed" id="data">
             <thead>
                 <tr class="cart_menu">
-                    <td class="description">Item</td>
+                    <td class="description" style="width:30%;">Item</td>
                     <td class="price">Price</td>
                     <td class="quantity">Quantity</td>
                     <td class="total">Total</td>
@@ -21,9 +21,9 @@
             <tbody>
                 @if(count($orders) > 0)
                     @foreach($orders as $order)
-                        <tr id="{{$order->order_id}}">
+                        <tr id="order{{$order->order_id}}">
                             <td class="cart_description">
-                                <h4><a href="">{{$order->item_name}}</a></h4>
+                                <label><b>{{$order->item_name}}</b></label>
                             </td>
                             <td class="cart_price">
                                 <div class="input-group" style="width:130px;">
@@ -34,15 +34,18 @@
                                 </div>                                
                             </td>
                             <td id="{{$order->item_price}}" class="cart_quantity">
-                                <input class="form-control" id="quantity" style="width:80px;" type="number" min="1" value="{{$order->order_quantity}}" size="2">
+                                <input class="form-control" id="quantity" data-id="{{$order->order_id}}" style="width:80px;" type="number" min="1" value="{{$order->order_quantity}}" size="2">
                             </td>
                             <td class="cart_total">
-                                <div class="input-group" style="width:130px;">
+                                <div class="input-group" style="width:175px;">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">$</span>
                                     </div>
-                                    <p id="totprice" class="form-control"> {{$order->item_price}}</p>
-                                </div>                                
+                                    <?php $itemtotal= sprintf('%0.2f',($order->item_price * $order->order_quantity));?>
+                                    <p id="totprice" class="form-control"> {{$itemtotal}}</p>
+                                    <button class="btn btn-danger" id="removeitem" data-id="{{$order->order_id}}" style="background:white; margin:0px 5px;"><i class="fa fa-trash-alt"color="red"></i></button>
+                                    <input name="_token" value="eRYFMqxeGXyGy7Kn1AU7af7qbGlt4uEp8RtYb4Vx" type="hidden">
+                                </div>                              
                             </td>
                         </tr>
                     @endforeach
@@ -74,7 +77,35 @@
 <button class="btn btn-success" id="cmd">Download</button>
 </div>
 
-<script>   
+<script>
+
+    var finalprice = 0;
+    //this will not include the header row
+    var rows = $("#data tr:gt(0)");
+    rows.children("td:nth-child(4)").each(function() {
+        //each time we add the cell to the total
+        finalprice += parseFloat($(this).children().children("#totprice").html());
+    });
+    $("#finalprice").html(finalprice.toFixed(2));
+
+    $(document).on('click', '#removeitem', function() {
+        $.ajax({
+            type: 'post',
+            url: '/order/cartremove',
+            data: {
+                '_token': $('input[name=_token]').val(),
+                'id': $(this).data('id')
+            },
+            success: function(data) {
+                $('#order'+ data.id).remove();
+             }   
+        });
+        
+        finalprice = parseFloat($("#finalprice").html()) - parseFloat($(this).siblings("#totprice").html());
+        $("#finalprice").html(finalprice.toFixed(2));
+
+        
+    });
 
     $(document).on('click focusout', '#quantity', function() {
         var quantity = $(this).val();
@@ -89,16 +120,18 @@
             finalprice += parseFloat($(this).children().children("#totprice").html());
         });
         $("#finalprice").html(finalprice.toFixed(2));
-    });
 
-    var finalprice = 0;
-    //this will not include the header row
-    var rows = $("#data tr:gt(0)");
-    rows.children("td:nth-child(4)").each(function() {
-        //each time we add the cell to the total
-        finalprice += parseFloat($(this).children().children("#totprice").html());
+        $.ajax({
+                type: 'post',
+                url: '/order/quanchange',
+                data: {
+                    '_token': $('input[name=_token]').val(),
+                    'id': $(this).data('id'),
+                    'quantity': $(this).val()
+                },
+                success: function(data) { }                 
+            });
     });
-    $("#finalprice").html(finalprice.toFixed(2));
 
 
     var doc = new jsPDF();

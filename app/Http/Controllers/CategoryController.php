@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Item;
+use DB;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -15,10 +16,18 @@ class CategoryController extends Controller
      */
     public function index($catid)
     {
-        $item = Item::all()->where('cat_id',$catid);
+        // $item = Item::all()->where('cat_id',$catid);
         $cat = Category::find($catid);
 
-        return view('category.details')->with('items',$item)->with('catname',$cat->cat_name);
+        $items = DB::table('items')
+        ->join('brands','items.brand_id','=','brands.brand_id')
+        ->join('categories','items.cat_id','=','categories.cat_id')
+        ->select('items.*','brands.brand_name','categories.cat_name')
+        ->where('categories.cat_id', '=', $catid)
+        ->get();
+        // dd($items);
+
+        return view('category.details')->with('items',$items)->with('category',$cat->cat_name);
     }
 
     /**
