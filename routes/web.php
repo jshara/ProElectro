@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 
 // Route::get('/brand/{catid}', 'BrandController@index');
 Route::get('/brand/{brandid}', 'BrandController@index');

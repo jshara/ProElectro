@@ -56,8 +56,9 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-dark">
             <div class="container">
                 <a class="navbar-brand" href= "/" style="color:#07DA0F;">ProElectro</a>
-                <a cursor="none" class="nav-link rounded-circle text-white" 
-                            Style="text-shadow:0px 0px 8px #07DA0F;"> <strong>Your Electronic Stop</strong>  </a>
+                <!-- <a cursor="none" class="nav-link rounded-circle text-white" 
+                            Style="text-shadow:0px 0px 8px #07DA0F;"> <strong>Your Electronic Stop</strong>  </a> -->
+                <a class="nav-link text-white" href= "/aboutus">About Us</a>      
                 <button class="navbar-toggler" style="background-color:white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon text-white"></span>
                 </button>
@@ -84,16 +85,9 @@
                                 @endforeach
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-white dropdown-toggle" href="#" id="category" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Store </a>
-                            <div class="dropdown-menu" aria-labelledby="category">
-                                <?php $stores = DB::table('stores')->select('store_id','store_name')->get(); ?>
-                                @foreach($stores as $store)
-                                    <a class="dropdown-item" href="/store/{{$store->store_id}}"><?php echo $store->store_name ?></a>
-                                @endforeach
-                            </div>
-                        </li>                     
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/contact">Contact</a>
+                        </li>
                     </ul>
                     
                     <div class="navbar-nav ml-auto">
