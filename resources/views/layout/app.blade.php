@@ -101,10 +101,77 @@
     
 </body>
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
+<footer style="background-color:#	#696969;" >
+    <!-- Grid column -->
+   
 
   <!-- Footer Elements -->
+  <div style= "background-color:#F5F5F5;" >
+
+  <div class="container text-center text-md-left">
+
+    <!-- Footer links -->
+    <div class="row text-center text-md-left mt-3 pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">ProElectro</h6>
+        <p>Your onestop shop for all electronic products. Visit our shop for greater variety.</p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+        <p>
+          <a href="#!">Phones</a>
+        </p>
+        <p>
+          <a href="#!">Laptops</a>
+        </p>
+        <p>
+          <a href="#!">Apple</a>
+        </p>
+        <p>
+          <a href="#!">Smart-Watches</a>
+        </p>
+      </div>
+      <!-- Grid column -->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Locations</a>
+        </p>
+        <p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+      </div>
+
+<!-- Links -->
+<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+<h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+
+<p>
+<img src="https://img.icons8.com/material/24/000000/home.png"> <break>Nakasi, Nausori</p>
+<img src="https://img.icons8.com/material-rounded/24/000000/email-open.png"><break> info@proelctro.com </p>
+<img src="https://img.icons8.com/material-rounded/24/000000/phone--v1.png"><break> 5588</p>
+<img src="https://img.icons8.com/material-rounded/24/000000/fax.png"><break> 5589</p>
+
+</div>
   <div class="container">
+      
 
     <!-- Social buttons -->
     <ul class="list-unstyled list-inline text-center">
@@ -127,10 +194,12 @@
     <!-- Social buttons -->
 
   </div>
+   
   <!-- Footer Elements -->
 
  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+
+  <div class="footer-copyright text-right">© 2019 Copyright:
     <a href="www.proelctro.com"> ProElectro.com</a>
   </div>
   <!-- Copyright -->
