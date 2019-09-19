@@ -3,7 +3,7 @@
 		<!-- Modal content-->
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title mx-auto" id="item_name"></h4>
+				<h3 class="modal-title mx-auto" id="item_name"></h3>
 				<button class="btn" style="padding:0px 0px;" data-dismiss="modal"> <i class="fa fa-times fa-lg" style="color:red;"></i></button>					
 			</div>
 			<div class="modal-body">
@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-md-4 offset-md-1">
 						<div class="form-group">
-							<label><b>Details:</b> </label>
+							<h5><b>Details: </b> </h5>
 							<div>
 								<p id="item_details"> </p>
 								<p id="item_description"> </p>
@@ -22,16 +22,16 @@
 					</div>				
 				</div><br>
 				<div class="row">
-					<div class="form-inline">
-						<label class="col-sm-3"><b>Brand:</b> </label>
-						<label id="item_brand" class="col-sm-3"> </label>
-						<label class="col-sm-3"><b>Category:</b> </label>
-						<label id="item_category" class="col-sm-3"> </label>
+					<div class="form-inline" style="font-size:17px">
+						<label class="col-sm-2"><b>Brand:</b> </label>
+						<label id="item_brand" class="col-sm-4" style="text-align:left;"> </label>
+						<label class="col-sm-2"><b>Category:</b> </label>
+						<label id="item_category" class="col-sm-4"> </label>
 					</div>
 				</div><br>
 
 				<div class="modal-footer">
-					<h4 id="item_price" class="mx-auto"></h4>
+					<h4  class="mx-auto"><b id="item_price"> </b></h4>
 					<button type="button" class="btn btn-warning" data-dismiss="modal">
 						Close
 					</button>					
