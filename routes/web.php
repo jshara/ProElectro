@@ -27,6 +27,8 @@ Route::get('/cart', 'CartController@index');
 	
 Route::post('/order/add', 'OrdersController@ajaxadd');
 Route::post('/order/remove', 'OrdersController@ajaxremove');
+Route::post('/order/cartremove', 'OrdersController@cartremove');
+Route::post('/order/quanchange', 'OrdersController@quanchange');
 
 // Route::get('/Item/{itemid}', 'ItemController@index');
 // Route::get('/cart/{cartid}', 'CartController@index');

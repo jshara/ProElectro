@@ -30,6 +30,25 @@
 
     <!-- jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <!-- <script scr="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script> -->
+
+    <style>    
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* background-color: DodgerBlue; */
+        }
+
+        .flex-container > div {
+            background-color: #f1f1f1;
+            border-radius: 25px;
+            width: 245px;
+            margin: 15px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 20px;
+        }
+    </style>
 
 </head>
 <body>
@@ -37,7 +56,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-dark">
             <div class="container">
                 <a class="navbar-brand" href= "/" style="color:#07DA0F;">ProElectro</a>
-                <a href="" class="nav-link rounded-circle text-white" 
+                <a cursor="none" class="nav-link rounded-circle text-white" 
                             Style="text-shadow:0px 0px 8px #07DA0F;"> <strong>Your Electronic Stop</strong>  </a>
                 <button class="navbar-toggler" style="background-color:white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon text-white"></span>
@@ -81,15 +100,15 @@
                         <form action="/item" method="POST" role="search">
                             {{ csrf_field() }}
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search">
+                                <input type="text" class="form-control" name="search" placeholder="Search">
                                 <div class="input-group-append">
-                                    <button type="submit" class="btn btn-success input-group-text">
+                                    <button type="submit" class="btn btn-success">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </div>
                             </div>
                         </form>
-                        <a href="/cart" class="btn btn-warning"> Cart </a>
+                        <a href="/cart" class="btn btn-warning" style="margin:0px 15px"> Cart </a>
                     </div>
                 </div>
             </div>

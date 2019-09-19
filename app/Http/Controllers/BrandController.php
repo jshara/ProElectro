@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Item;
+use DB;
 use Illuminate\Http\Request;
 
 class BrandController extends Controller
@@ -15,11 +16,18 @@ class BrandController extends Controller
      */
     public function index($brandid)
     {
-        $item = Item::all()->where('brand_id',$brandid);
+        // $item = Item::all()->where('brand_id',$brandid);
 
         $brand = Brand::find($brandid);
+        $items = DB::table('items')
+        ->join('categories','items.cat_id','=','categories.cat_id')
+        ->join('brands','items.brand_id','=','brands.brand_id')
+        ->select('items.*','brands.brand_name','categories.cat_name')
+        ->where('brands.brand_id', '=', $brandid)
+        ->get();
+        // dd($items);
 
-        return view('brand.details')->with('items',$item)->with('brandname',$brand->brand_name);
+        return view('brand.details')->with('items',$items)->with('brandname',$brand->brand_name);
     }
 
     /**

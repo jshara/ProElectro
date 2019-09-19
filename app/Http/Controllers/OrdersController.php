@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use DB;
+use Session;
 use Illuminate\Http\Request;
 
 class OrdersController extends Controller
@@ -22,6 +23,7 @@ class OrdersController extends Controller
         $order = new Order();
         $order->order_quantity = 1;
         $order->item_id = $req->id;
+        $order->session_id = Session::getId();
         $order->save();
 
         return response()->json($order);
@@ -30,7 +32,24 @@ class OrdersController extends Controller
     public function ajaxremove(Request $req){
         DB::table('orders')
         ->where('item_id','=',$req->id)
-        ->delete();
+        ->where('session_id','=',Session::getId())
+        ->update(['done'=> 1]);
+        
+        return response()->json($req);
+    }
+
+    public function cartremove(Request $req){
+        DB::table('orders')
+        ->where('order_id','=',$req->id)
+        ->update(['done'=> 1]);
+
+        return response()->json($req);
+    }
+
+    public function quanchange(Request $req){
+        DB::table('orders')
+        ->where('order_id','=',$req->id)
+        ->update(['order_quantity'=> $req->quantity]);
         
         return response()->json($req->id);
     }

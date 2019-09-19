@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('order_id');
             $table->integer('order_quantity');
             $table->unsignedBigInteger('item_id');
+            $table->string('session_id');
             $table->boolean('done')->default('0');
             $table->timestamps();
         });

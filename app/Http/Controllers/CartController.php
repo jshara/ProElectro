@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use DB;
+use Session;
 use App\Order;
 use Illuminate\Http\Request;
 
@@ -22,9 +23,19 @@ class CartController extends Controller
         // ->select('orders.order_quantity','items.item_name','items.item_price')
         // ->where('orders.done','=','0')
         // ->get();
+        $session_id = Session::getId();
+
         
-        $sql = 'SELECT orders.order_id, orders.order_quantity, items.item_name, items.item_price FROM orders INNER JOIN items ON orders.item_id = items.item_id';
-        $order = DB::select($sql);
+        // $sql = 'SELECT orders.order_id, orders.order_quantity, orders.session_id, items.item_name, items.item_price FROM orders 
+        // INNER JOIN items ON (orders.item_id = items.item_id) WHERE (orders.session_id= $session_id)';
+        // $order = DB::select($sql);
+
+        $order = DB::table('orders')
+        ->join('items','orders.item_id','=','items.item_id')
+        ->select('orders.order_id', 'orders.order_quantity', 'items.item_name','items.item_price')
+        ->where('orders.session_id', '=', $session_id)
+        ->where('orders.done', '=', 0)
+        ->get();
         // dd($order);
 
         return view('cart.details')->with('orders',$order);

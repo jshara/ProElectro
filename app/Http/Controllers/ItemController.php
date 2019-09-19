@@ -29,7 +29,7 @@ class ItemController extends Controller
         ->get();
 
         //  dd($items);
-        return view('item.details')->with('items',$items);           
+        return view('item.details')->with('items',$items)->with('search',Input::get('search'));           
     }
 
     /**
