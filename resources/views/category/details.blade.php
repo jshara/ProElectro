@@ -3,17 +3,19 @@
 @section('content')
 <div class="container">
     <div>
-        <h3>{{$category}}</h3>
+        <h3 align="center">{{$category}}</h3>
     </div>
     <div class="flex-container d-flex justify-content-around">
         @if(count($items) > 0)
             @foreach($items as $item)
-                <div>
-                <div id="view">                                     
-                    <label>{{$item->item_name}}</label><br>             
-                    <img src="{{$item->item_pic}}" style="border-radius:15px" height="150px" width="150px"/>          
-                    <label>{{$item->brand_name}}</label> <br> 
-                </div>  
+                <div class="hovering" >
+                    <div id="view" style="cursor:pointer;" data-name="{{$item->item_name}}" data-image="{{$item->item_pic}}"
+                            data-details="{{$item->item_details}}" data-description="{{$item->item_desc}}"
+                            data-brand="{{$item->brand_name}}" data-category="{{$item->cat_name}}" data-price="{{$item->item_price}}">                                     
+                        <label>{{$item->item_name}}</label><br>             
+                        <img src="{{$item->item_pic}}" style="border-radius:15px" height="150px" width="150px"/>          
+                        <label>{{$item->brand_name}}</label> <br> 
+                    </div>  
                     <label>${{$item->item_price}}</label>
                     <?php $check = DB::table('orders')->where('item_id',$item->item_id)->where('done',0)->where('session_id',Session::getId())->count();?>
                     <input name="_token" value="eRYFMqxeGXyGy7Kn1AU7af7qbGlt4uEp8RtYb4Vx" type="hidden">
@@ -31,7 +33,22 @@
 @include('layout.modal')
 <script>
     $(document).on('click','#view', function(){
+        $('#item_name').text($(this).data('name'));
+        $('#item_details').text($(this).data('details'));
+        $('#item_description').text($(this).data('description'));
+        $('#item_brand').text($(this).data('brand'));
+        $('#item_category').text($(this).data('category'));
+        $('#item_price').text("$ "+$(this).data('price'));
+        $('#item_image').attr('src', $(this).data('image'));
         $('#myModal').modal('show');
+    });
+
+    $(document).ready(function(){
+        $(".hovering").hover(function(){
+            $(this).css("background-color", "#DCDCDC");
+            }, function(){
+            $(this).css("background-color", "#f1f1f1");
+        });
     });
 
     $(document).on('click', '.acart', function() {
