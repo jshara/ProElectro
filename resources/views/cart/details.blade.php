@@ -4,7 +4,7 @@
 <div class="container">
 <div id="content">
     <div>
-        <h3>This is where the quotations will go</h3>
+        <h3 align="center">Quotation Cart</h3>
     </div>
 
     <div class="table-responsive cart_info">
