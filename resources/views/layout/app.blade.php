@@ -36,7 +36,6 @@
         .flex-container {
             display: flex;
             flex-wrap: wrap;
-            /* background-color: DodgerBlue; */
         }
 
         .flex-container > div {
@@ -48,19 +47,20 @@
             line-height: 70px;
             font-size: 20px;
         }
+        
     </style>
 
 </head>
 <body>
     <div id="app"> 
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel bg-dark">
-            <div class="container">
+        <nav class="navbar navbar-expand-md bg-dark" style="margin-bottom:0px;">
+            <div class="container" style="margin:0px;">
                 <a class="navbar-brand" href= "/" style="color:#07DA0F;">ProElectro</a>
                 <!-- <a cursor="none" class="nav-link rounded-circle text-white" 
                             Style="text-shadow:0px 0px 8px #07DA0F;"> <strong>Your Electronic Stop</strong>  </a> -->
                 <a class="nav-link text-white" href= "/aboutus">About Us</a>      
-                <button class="navbar-toggler" style="background-color:white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon text-white"></span>
+                <button class="navbar-toggler" style="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="fas fa-bars navbar-toggler-icon text-white"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -107,12 +107,12 @@
                 </div>
             </div>
         </nav>        
-        <main class="py-4">
+        <main class="main py-4">
             @yield('content')
         </main>
     </div>
     <script>
-  
+
     </script>    
     
 </body>
